@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/taskconfig?autoReconnect=true&useUnicode=true&createDatabaseIfNotExist=true&characterEncoding=utf8&useSSL=true&serverTimezone=UTC
+
+
+
+logging:
+  level:
+    com.aniu.redis.dao: DEBUG
+
+mybatis:
+  config-location: classpath:mapper/*.xml
+  type-aliases-package: com.aniu.redis.entity

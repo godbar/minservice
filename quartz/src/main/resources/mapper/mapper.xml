@@ -12,7 +12,7 @@
         <result column="trigger_name" property="triggerName"/>
         <result column="trigger_group" property="triggerGroup"/>
     </resultMap>
-
+    
     <select id="selectTask" resultType="list" resultMap="task">
         select * from task
     </select>
