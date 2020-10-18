@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aniu.cache.dao.UserDao">
+    <cache></cache>
+    <resultMap id="user" type="com.aniu.cache.entity.User">
+        <id property="id" column="id"/>
+        <result property="userName" column="user_name"/>
+        <result property="password" column="password"/>
+    </resultMap>
+
+    <select id="selectUserById" resultMap="user">
+        select * from user where id = #{id}
+    </select>
+    
+    <insert id="insertUser" parameterType="com.aniu.cache.entity.User">
+        insert into user (id,user_name,password) values (#{user.id},#{user.userName},#{user.password})
+    </insert>
+</mapper>
